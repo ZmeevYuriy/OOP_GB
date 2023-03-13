@@ -3,8 +3,7 @@ package hw1.task2;
 /**
  * Класс шкафа
  */
-public class Wardrobe {
-    String description; //описание шкафа
+public class Wardrobe extends BaseItem {
     private Item[] storage; //хранилище вещей
     private boolean isOpenDoors;//состояние двери
 
@@ -28,10 +27,9 @@ public class Wardrobe {
      *
      * @return
      */
-    public boolean openDoor() {
-        if (isOpenDoors) return false;
+    public void openDoor() {
         isOpenDoors = true;
-        return true;
+        System.out.printf("Двери %s открыли\n",description );
     }
 
     /**
@@ -39,10 +37,9 @@ public class Wardrobe {
      *
      * @return
      */
-    public boolean closeDoor() {
-        if (!isOpenDoors) return false;
+    public void closeDoor() {
         isOpenDoors = false;
-        return true;
+        System.out.printf("Двери %s закрыли\n",description );
     }
 
     /**
